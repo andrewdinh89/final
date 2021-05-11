@@ -6,8 +6,9 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@auth0/auth0-react": "^1.5.0",
+    "auth0-js": "^9.16.0",
     "contentful": "^8.2.1",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "gatsby": "^3.2.1",
     "gatsby-plugin-gatsby-cloud": "^2.2.0",
     "gatsby-plugin-image": "^1.2.0",

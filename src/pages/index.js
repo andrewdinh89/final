@@ -44,7 +44,7 @@ const IndexPage = () => {
       })
     }
     <p>Need some questions? <Link to="/contact">Click Here!</Link></p>
-    <button>Log In</button>
+    
   </Layout>
 )
 }

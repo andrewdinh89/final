@@ -13,9 +13,11 @@ export const wrapRootElement = ({element}) => {
     return (
         <Auth0Provider
             domain="dev-ys7odhhp.us.auth0.com"
-            clientID="epfJcm1SoWqv5uyPUV5BVyVi346qMOhv"
+            clientID="or4GqZelubF9xO7Wrb6xkOKaSxkknmEW"
             redirectUri="http://localhost:8000/blog"
-        >
+           
+        > 
+        
           {element}  
         </Auth0Provider>
     )

@@ -12,23 +12,35 @@ const Blog = () => {
 
   const{isAuthenticated, loginWithRedirect, logout, user } = useAuth0()
      const query = (graphql`
-  {
-    allContentfulBlog(sort: {fields: publishDate, order: DESC}) {
-      edges {
-        node {
-          title
-          slug
-          publishDate(fromNow: true, formatString: "dd MMMM, YYYY")
-          body {
-            raw
-          }
-        }
-      }
-    }
-  }
-`)
+      
+     {
+       allContentfulBlog {
+         edges {
+           node {
+             body {
+               raw
+             }
+             author
+             slug
+             title
+             publishDate(formatString: "", fromNow: true)
+           }
+         }
+       }
+     }
+   `)
 
-
+const LoginButton = () => {
+  const { loginWithRedirect } = useAuth0();
+  return (
+    <button
+      className="btn btn-primary btn-block"
+      onClick={() => loginWithRedirect()}
+    >
+      Log In
+    </button>
+  );
+};
 
 
 
@@ -42,7 +54,9 @@ const Blog = () => {
           
           {
             !isAuthenticated && (
-              <button onClick={() => loginWithRedirect}>Log In</button>
+              <button>
+                <Link to ="https://dev-ys7odhhp.us.auth0.com/login?state=hKFo2SBhNUhmQ3A4QWFlaUNQZ1FhNkkzV3c3bEdxdHFSaWtkQaFupWxvZ2luo3RpZNkgTDNYSmg3eU56YmRVcGRqN2JsQkpVWjNGd3FpZ2FRTHSjY2lk2SA5VGtqV1ZEQXVLWkJpY2RBVEh5YW5qVEpTcDRnTlhGSQ&client=9TkjWVDAuKZBicdATHyanjTJSp4gNXFI&protocol=oauth2&prompt=consent&response_type=code&redirect_uri=https%3A%2F%2Fmanage.auth0.com%2Ftester%2Fcallback%3Fconnection%3Dgoogle-oauth2&scope=openid%20profile"></Link>Log In</button>
+              
             )
           }
           {
@@ -100,7 +114,7 @@ const Blog = () => {
                             <p>Written Jimmy Le</p>
                             <Link to="/Depression3">Read More...</Link>
                             <br/>
-                            <button onClick={() => logout()}>Sign-Out</button>
+                            <button onClick={() => Sign-out()}>Sign-Out</button>
                         </div>
 
                 
